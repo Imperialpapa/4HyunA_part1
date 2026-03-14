@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Nunito:wght@400;600;700;800&family=Gaegu:wght@300;400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --font-ko: 'Nanum Myeongjo', 'Batang', serif;
+  --font-en: 'Nunito', 'Arial', sans-serif;
+  --font-ui: 'Gaegu', cursive, sans-serif;
+}
+
+html[lang="ko"] body {
+  font-family: var(--font-ko);
+}
+
+html[lang="en"] body {
+  font-family: var(--font-en);
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #E8F5E9;
+  color: #333;
+}
+
+/* Language-specific font selectors for mixed content */
+[lang="ko"] {
+  font-family: var(--font-ko);
+}
+
+[lang="en"] {
+  font-family: var(--font-en);
+}
+
+::selection {
+  background: #A5D6A7;
+  color: #1B5E20;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #81C784;
+  border-radius: 3px;
+}
+
+:focus-visible {
+  outline: 3px solid #FF8F00;
+  outline-offset: 2px;
+  border-radius: 4px;
+}

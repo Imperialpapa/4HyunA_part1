@@ -1,0 +1,72 @@
+/* Global reset and font import */
+@import url('https://fonts.googleapis.com/css2?family=Gaegu:wght@300;400;700&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Gaegu', 'Jua', 'Noto Sans KR', cursive, sans-serif;
+  background: #E8F5E9;
+  color: #333;
+  overflow-x: hidden;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+#root {
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+/* Selection */
+::selection {
+  background: #A5D6A7;
+  color: #1B5E20;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #C8E6C9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #81C784;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #66BB6A;
+}
+
+/* Touch */
+button, a {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+/* Prevent text selection on buttons */
+button {
+  user-select: none;
+}
+
+/* Focus visible for accessibility */
+:focus-visible {
+  outline: 3px solid #FF8F00;
+  outline-offset: 2px;
+  border-radius: 8px;
+}

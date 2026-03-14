@@ -1,0 +1,224 @@
+.home {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #87CEEB 0%, #B5E8D5 40%, #E8F5E9 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.home-header {
+  text-align: center;
+  padding: 2.5rem 1rem 1.5rem;
+  position: relative;
+}
+
+.home-lang-toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 10;
+}
+
+.home-title-wrapper {
+  position: relative;
+  z-index: 2;
+}
+
+.home-title {
+  font-family: var(--font-ui);
+  font-size: clamp(2.2rem, 6vw, 3.5rem);
+  color: #2E7D32;
+  text-shadow: 2px 2px 0 rgba(255, 255, 255, 0.6);
+  margin: 0;
+  letter-spacing: 0.05em;
+}
+
+.title-emoji {
+  display: inline-block;
+  font-size: 0.8em;
+  margin: 0 0.2em;
+  animation: sway 3s ease-in-out infinite;
+}
+
+.title-emoji:last-child {
+  animation-delay: 0.5s;
+}
+
+@keyframes sway {
+  0%, 100% { transform: rotate(-5deg); }
+  50% { transform: rotate(5deg); }
+}
+
+.home-subtitle {
+  font-family: var(--font-ui);
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  color: #558B2F;
+  margin: 0.3rem 0 0;
+  opacity: 0.9;
+}
+
+/* Floating decorations */
+.floating-deco {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.float-item {
+  position: absolute;
+  font-size: 1.4rem;
+  animation: floatUp linear infinite;
+  opacity: 0.6;
+  top: 20%;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0) rotate(0deg); opacity: 0.6; }
+  50% { opacity: 0.9; }
+  100% { transform: translateY(-30px) rotate(15deg); opacity: 0.4; }
+}
+
+/* Story grid */
+.story-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.2rem;
+  padding: 1rem 1.5rem 6rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.story-card {
+  background: var(--card-color);
+  border: none;
+  border-radius: 24px;
+  padding: 1.8rem 1.2rem;
+  cursor: pointer;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1), 0 2px 6px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.3s;
+  font-family: inherit;
+}
+
+.story-card:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.story-card::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+}
+
+.story-card::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: -15px;
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+}
+
+.card-emoji {
+  font-size: 3.5rem;
+  margin-bottom: 0.6rem;
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.1));
+}
+
+.card-title {
+  font-size: 1.3rem;
+  color: #333;
+  margin: 0 0 0.3rem;
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+.card-subtitle {
+  font-size: 0.95rem;
+  color: #555;
+  margin: 0 0 0.6rem;
+  opacity: 0.85;
+  line-height: 1.4;
+}
+
+.card-pages {
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  color: #666;
+  background: rgba(255, 255, 255, 0.5);
+  display: inline-block;
+  padding: 0.2rem 0.8rem;
+  border-radius: 20px;
+}
+
+/* Footer */
+.home-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.footer-grass {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: #4CAF50;
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+}
+
+.footer-content {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-around;
+  padding: 0 2rem;
+}
+
+.footer-flower {
+  font-size: 1.4rem;
+  animation: sway 2.5s ease-in-out infinite;
+  display: inline-block;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .story-grid {
+    grid-template-columns: 1fr;
+    padding: 1rem 1rem 6rem;
+    gap: 1rem;
+  }
+
+  .home-header {
+    padding: 2rem 1rem 1rem;
+  }
+
+  .card-emoji {
+    font-size: 2.8rem;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  .story-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
